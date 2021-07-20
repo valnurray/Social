@@ -11,9 +11,14 @@
   /* grid-gap: 10px; */
 }
 
-.content{
+/*.content{*/
+/*  grid-area: c;*/
+/*  background-color: darkgray;*/
+/*}*/
+
+.app-wrapper-content {
   grid-area: c;
-  background-color: darkgray;
+  background-color: wheat;
 }
 
 

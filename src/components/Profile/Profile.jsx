@@ -1,23 +1,23 @@
 import React from "react";
 import Posts from "./Posts/Posts";
-import  classes from "./Profile.module.css"
+import classes from "./Profile.module.css"
 
 const Profile = () => {
-  return <div className= {classes.content} >
-    <img src="https://www.nasa.gov/images/content/174723main_LEFTBlueCUSun.jpg" />
-    
-    <div className = {classes.discription}>
-      discription
+    return <div >
+        <img className={classes.profile} src="https://www.nasa.gov/images/content/174723main_LEFTBlueCUSun.jpg"/>
+
+        <div>
+            description
+        </div>
+
+        <div>
+            description
+        </div>
+
+        <Posts/>
+
+
     </div>
-   
-    <div className = {classes.discription}>
-      discription
-    </div>
-
-    <Posts/>
-
-
-  </div>
 
 
 }
