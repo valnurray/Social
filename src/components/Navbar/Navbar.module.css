@@ -3,8 +3,10 @@
 .nav{
   grid-area: n;
   background-color: burlywood;
+  padding: 20px;
 }
 
-.item {
+.nav a {
   color: white;
+  text-decoration: none;
 }
