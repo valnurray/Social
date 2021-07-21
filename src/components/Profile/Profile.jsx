@@ -1,24 +1,17 @@
 import React from "react";
 import Posts from "./Posts/Posts";
 import classes from "./Profile.module.css"
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 const Profile = () => {
-    return <div >
-        <img className={classes.profile} src="https://www.nasa.gov/images/content/174723main_LEFTBlueCUSun.jpg"/>
+    return (
 
         <div>
-            description
+            <ProfileInfo />
+            <Posts/>
+
         </div>
-
-        <div>
-            description
-        </div>
-
-        <Posts/>
-
-
-    </div>
-
+    );
 
 }
 

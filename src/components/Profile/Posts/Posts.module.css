@@ -1,5 +1,11 @@
 
 .posts {
-    text-decoration: underline;
+    text-decoration: none;
+    padding: 10px;
+    text-decoration-color: black;
+}
+
+.post {
+    margin-top: 10px;
 }
 
