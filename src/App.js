@@ -16,38 +16,6 @@ import Message from "./components/Dialogs/Message/Message";
 
 const App = (props) => {
 
-    /*Data*/
-    let PostData = [
-        {id: 1, message: "Some message for post", like: 15},
-        {id: 2, message: "Some different for post number 2", like: 10},
-        {id: 3, message: "First post, i gues", like: 3}
-    ]
-
-    let DialogData = [
-        {id: 1, name: "Vasya"},
-        {id: 2, name: "Dasha"},
-        {id: 3, name: "Masha"},
-        {id: 4, name: "Sasha"},
-        {id: 5, name: "Glasha"}
-    ]
-
-    let MessageData = [
-        {id: 1, message: "Hi"},
-        {id: 2, message: "Welcome"},
-        {id: 3, message: "How are you?"},
-        {id: 4, message: "Where is my money?"},
-        {id: 5, message: "I need my money"},
-    ]
-    /*Mapping*/
-    let PostElement = PostData
-        .map(post => <Post message={post.message} like={post.like}/>)
-
-    let DialogElements = DialogData
-        .map(dialog => <DialogItems name={dialog.name} id={dialog.id}/>)
-
-    let MessageElement = MessageData
-        .map(message => <Message message={message.message}/>)
-
     /*Front*/
     return (
         <BrowserRouter>
@@ -58,11 +26,13 @@ const App = (props) => {
 
                 <div class="app-wrapper-content">
 
-                    <Route path = "/dialogs" render= { () => <Dialogs DialogElements = {DialogElements} MessageElement = {MessageElement}/>}/>
-                    <Route path = "/profile" render= { () => <Profile postData ={PostElement}/>}/>
-                    <Route path = "/news" render= { () => <News />}/>
-                    <Route path = "/music" render= { () => <Music />}/>
-                    <Route path = "/settings" render= { () => <Settings />}/>
+                    <Route path="/dialogs"
+                           render={() => <Dialogs DialogData={props.DialogData}
+                                                  MessageData={props.MessageData}/>}/>
+                    <Route path="/profile" render={() => <Profile postData={props.PostData}/>}/>
+                    <Route path="/news" render={() => <News/>}/>
+                    <Route path="/music" render={() => <Music/>}/>
+                    <Route path="/settings" render={() => <Settings/>}/>
                 </div>
 
             </div>
