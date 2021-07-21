@@ -1,26 +1,34 @@
 import React from "react";
-import  classes from "./Posts.module.css"
+import classes from "./Posts.module.css"
 import Post from "./Post/Post";
 
 const Posts = () => {
-  return  <div className = {classes.posts}>
-      <h3>My Posts</h3>
 
-      <div>
+    let PostData = [
+        {id: 1, message: "Some message for post", like: 15},
+        {id: 2, message: "Some different for post number 2", like: 10},
+        {id: 3, message: "First post, i gues", like: 3}
+    ]
+
+
+    return <div className={classes.posts}>
+        <h3>My Posts</h3>
+
+        <div>
           <textarea>
 
           </textarea>
-      </div>
-      <button>
-          Add post!
-      </button>
-      <div className={classes.post}>
-      <Post message = 'Some message for post' like = '15'/>
+        </div>
+        <button>
+            Add post!
+        </button>
+        <div className={classes.post}>
 
-      <Post message = 'Some different for post number 2' like = '10'/>
+            <Post message={PostData[0].message} like={PostData[0].like}/>
+            <Post message={PostData[1].message} like={PostData[1].like}/>
+            <Post message={PostData[2].message} like={PostData[2].like}/>
 
-      <Post message = 'First post, i gues' like = '4'/>
-      </div>
+        </div>
     </div>
 
 }
