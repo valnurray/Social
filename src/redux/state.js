@@ -1,3 +1,5 @@
+import {reRenderTree} from "../reRender";
+
 let state = {
 
     ProfilePage:{
@@ -22,6 +24,15 @@ let state = {
             {id: 5, message: "I need my money"}
         ]
     }
-
 }
+export let addPost = (postMessage) => {
+    let newPost = {
+        id: 4,
+        message: postMessage,
+        like: 100
+    };
+    state.ProfilePage.PostData.push(newPost);
+    reRenderTree(state);
+}
+
 export default state;

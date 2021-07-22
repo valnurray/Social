@@ -9,14 +9,14 @@ import Music from "./components/Music/Music";
 import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
 import Start from "./components/Start/Start";
-import state from "./redux/state";
+// import state from "./redux/state";
+
 
 
 const App = (props) => {
 
     /*Front*/
     return (
-        <BrowserRouter>
             <div className="app-wrapper">
 
                 <Header/>
@@ -27,15 +27,14 @@ const App = (props) => {
                     <Route exact path = "/" render = { () => <Start />}/>
 
                     <Route path="/dialogs"
-                           render={() => <Dialogs state={state.DialogPage}/>}/>
-                    <Route path="/profile" render={() => <Profile state={state.ProfilePage}/>}/>
+                           render={() => <Dialogs state={props.state.DialogPage}/>}/>
+                    <Route path="/profile" render={() => <Profile state={props.state.ProfilePage} addPost = {props.addPost}/>}/>
                     <Route path="/news" render={() => <News/>}/>
                     <Route path="/music" render={() => <Music/>}/>
                     <Route path="/settings" render={() => <Settings/>}/>
                 </div>
 
             </div>
-        </BrowserRouter>
     );
 }
 
