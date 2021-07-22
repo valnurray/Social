@@ -7,7 +7,9 @@ let state = {
             {id: 1, message: "Some message for post", like: 15},
             {id: 2, message: "Some different for post number 2", like: 10},
             {id: 3, message: "First post, i gues", like: 3}
-        ]},
+        ],
+        newPostText: "new text from post"
+    },
     DialogPage:{
         DialogData: [
             {id: 1, name: "Vasya", avatar:"https://www.shareicon.net/data/512x512/2016/05/29/772559_user_512x512.png"},
@@ -25,13 +27,19 @@ let state = {
         ]
     }
 }
-export let addPost = (postMessage) => {
+export let addPost = () => {
     let newPost = {
         id: 4,
-        message: postMessage,
+        message: state.ProfilePage.newPostText,
         like: 100
     };
     state.ProfilePage.PostData.push(newPost);
+    updateNewPostText("");
+    reRenderTree(state);
+}
+
+export let updateNewPostText = (newText) => {
+    state.ProfilePage.newPostText = newText;
     reRenderTree(state);
 }
 

@@ -12,29 +12,30 @@ import Start from "./components/Start/Start";
 // import state from "./redux/state";
 
 
-
 const App = (props) => {
 
     /*Front*/
     return (
-            <div className="app-wrapper">
+        <div className="app-wrapper">
 
-                <Header/>
-                <Navbar/>
+            <Header/>
+            <Navbar/>
 
-                <div class="app-wrapper-content">
+            <div class="app-wrapper-content">
 
-                    <Route exact path = "/" render = { () => <Start />}/>
+                <Route exact path="/" render={() => <Start/>}/>
 
-                    <Route path="/dialogs"
-                           render={() => <Dialogs state={props.state.DialogPage}/>}/>
-                    <Route path="/profile" render={() => <Profile state={props.state.ProfilePage} addPost = {props.addPost}/>}/>
-                    <Route path="/news" render={() => <News/>}/>
-                    <Route path="/music" render={() => <Music/>}/>
-                    <Route path="/settings" render={() => <Settings/>}/>
-                </div>
-
+                <Route path="/dialogs"
+                       render={() => <Dialogs state={props.state.DialogPage}/>}/>
+                <Route path="/profile" render={() => <Profile profilePage={props.state.ProfilePage}
+                                                              addPost={props.addPost}
+                                                              updateNewPostText={props.updateNewPostText}/>}/>
+                <Route path="/news" render={() => <News/>}/>
+                <Route path="/music" render={() => <Music/>}/>
+                <Route path="/settings" render={() => <Settings/>}/>
             </div>
+
+        </div>
     );
 }
 
