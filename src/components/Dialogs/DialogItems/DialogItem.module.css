@@ -2,6 +2,7 @@
     padding: 10px;
 }
 
+
 .dialog a.active {
     color: chocolate;
     margin-bottom: 20px;
@@ -11,14 +12,15 @@
 .dialog img {
     width: 40px;
     border-radius: 30px;
-    padding: 10px;
+    padding: 5px;
 }
 
 .dialog a {
     color: white;
     text-decoration: none;
+
 }
 
-.dialogsItems {
+.dialogsItem {
 
 }
