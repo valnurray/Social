@@ -1,4 +1,7 @@
-import {reRenderTree} from "../reRender";
+
+let reRenderTree = () => {
+    console.log("state is change!")
+}
 
 let state = {
 
@@ -27,7 +30,7 @@ let state = {
         ]
     }
 }
-export let addPost = () => {
+export const addPost = () => {
     let newPost = {
         id: 4,
         message: state.ProfilePage.newPostText,
@@ -38,9 +41,13 @@ export let addPost = () => {
     reRenderTree(state);
 }
 
-export let updateNewPostText = (newText) => {
+export const updateNewPostText = (newText) => {
     state.ProfilePage.newPostText = newText;
     reRenderTree(state);
+}
+
+export const subscribe = (observer) => {
+    reRenderTree = observer;
 }
 
 export default state;
