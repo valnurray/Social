@@ -7,15 +7,19 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
 import {observe} from "web-vitals/dist/modules/lib/observe";
+import StoreContext from "./StoreContext";
 
 let reRenderTree = (state) => {
 
     ReactDOM.render(
         <BrowserRouter>
-            <App state={state}
-                 dispatch={store.dispatch.bind(store)}
-                 store = {store}
-            />
+            <StoreContext.Provider value={store}>
+                <App
+                    // state={state}
+                    //  dispatch={store.dispatch.bind(store)}
+                    //  store={store}
+                />
+            </StoreContext.Provider>
         </BrowserRouter>,
         document.getElementById('root')
     );
@@ -24,7 +28,7 @@ let reRenderTree = (state) => {
 }
 
 reRenderTree(store.getState());
-store.subscribe( () => {
+store.subscribe(() => {
     let state = store.getState();
     reRenderTree(state);
 });
