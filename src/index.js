@@ -6,20 +6,19 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
-import {observe} from "web-vitals/dist/modules/lib/observe";
-import StoreContext from "./StoreContext";
+import {Provider} from "react-redux";
 
 let reRenderTree = (state) => {
 
     ReactDOM.render(
         <BrowserRouter>
-            <StoreContext.Provider value={store}>
+            <Provider store={store}>
                 <App
                     // state={state}
                     //  dispatch={store.dispatch.bind(store)}
-                    //  store={store}
+                     store={store}
                 />
-            </StoreContext.Provider>
+            </Provider>
         </BrowserRouter>,
         document.getElementById('root')
     );
