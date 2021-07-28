@@ -1,4 +1,3 @@
-import dialogPageReducer from "./dialogPageReducer";
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 
@@ -18,14 +17,18 @@ const profilePageReducer = (state = initialState, action) => {
             let newPost = {
                 id: 4,
                 message: state.newPostText,
-                like: 100
+                like: 0
             };
-            state.PostData.push(newPost);
-            state.newPostText = '';
-            return state;
+            return {
+                ...state,
+                PostData: [...state.PostData, newPost],
+                newPostText: ''
+            };
         case UPDATE_NEW_POST_TEXT:
-            state.newPostText = action.newText;
-            return state;
+            return {
+                ...state,
+                newPostText: action.newText
+            };
         default:
             return state;
     }
