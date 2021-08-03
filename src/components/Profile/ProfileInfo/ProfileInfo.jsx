@@ -16,7 +16,9 @@ const ProfileInfo = (props) => {
                 <div/>
                 <div className={classes.description}>
                     <img src={props.profile.photos.large}/>
-                    Desc + ava
+                    <div>
+                        Desc + ava
+                    </div>
                 </div>
             </div>
         </div>
